@@ -1,16 +1,28 @@
 // ==UserScript==
-// @name         userscript-name
+// @name         duckduckgo-gmaps
 // @namespace    https://github.com/kiangkuang
 // @version      0.0.1
 // @author       Kiang Kuang
-// @description  userscript description
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=github.com
-// @match        https://github.com/*
+// @description  Redirect DuckDuckGo Maps query to Google Maps
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=duckduckgo.com
+// @match        https://duckduckgo.com/*
 // ==/UserScript==
 
 (function () {
-	'use strict';
+  'use strict';
 
-	console.log("hello world!");
+  let oldHref = "";
+  const observer = new MutationObserver(() => {
+    if (oldHref === window.location.href)
+      return;
+    oldHref = window.location.href;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("iaxm") === "maps") {
+      window.location.replace(
+        `https://www.google.com/maps/search/?api=1&query=${params.get("q")}`
+      );
+    }
+  });
+  observer.observe(window.document.body, { childList: true, subtree: true });
 
 })();
