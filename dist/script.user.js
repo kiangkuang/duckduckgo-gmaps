@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         duckduckgo-gmaps
+// @name         DuckDuckGo Use Google Maps Search
 // @namespace    https://github.com/kiangkuang
 // @version      0.0.1
 // @author       Kiang Kuang
-// @description  Redirect DuckDuckGo Maps query to Google Maps
+// @description  Automatically redirects map searches from DuckDuckGo to Google Maps.
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=duckduckgo.com
 // @match        https://duckduckgo.com/*
 // ==/UserScript==

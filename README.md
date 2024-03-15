@@ -1,13 +1,6 @@
-# Userscript TypeScript Template
+# DuckDuckGo Use Google Maps Search
 
-A template for creating userscripts in TypeScript. This repository provides a basic structure and tooling to get you started quickly with userscript development.
-
-## Features
-
-- Userscripts using TypeScript powered by Vite
-- Configurable userscript headers using [vite-plugin-monkey](https://github.com/lisonge/vite-plugin-monkey)
-- Prettier as formatter with pre-commit hook to run lint-staged
-- Pre-commit hook to build latest code so you can use repository as installation link (See [Deployment](#deployment))
+Automatically redirects map searches from DuckDuckGo to Google Maps.
 
 ## Install
 
